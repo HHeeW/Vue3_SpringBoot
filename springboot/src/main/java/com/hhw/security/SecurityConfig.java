@@ -2,7 +2,6 @@ package com.hhw.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Role;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -29,10 +28,11 @@ public class SecurityConfig {
             )//2번
             .authorizeHttpRequests((authorizeRequests) ->
                 authorizeRequests
-                    .requestMatchers("/", "/login/**").permitAll()
+                    .requestMatchers("/", "/api/**", "api/login/**").permitAll()
                     .requestMatchers("/posts/**", "api/posts/**").hasRole(Role.USER.name())
                     .requestMatchers("/admin/**", "api/admin/**").hasRole(Role.ADMIN.name())
                     .anyRequest().authenticated()
             );
-    }
+        return http.build();
+    };
 }
