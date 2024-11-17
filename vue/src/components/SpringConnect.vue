@@ -5,7 +5,7 @@
   </template>
   
   <script>
-  import axios from 'axios';
+  import {getPost} from '../resources/js/common'
   
   export default {
     data() {
@@ -14,13 +14,10 @@
       };
     },
     mounted() {
-      axios.get('/api/hello')
-        .then(response => {
-          this.message = response.data;
-        })
-        .catch(error => {
-          console.error("There was an error!", error);
-        });
+      const setMsg = (res) => {
+        this.message = res.data;
+      }
+      getPost('/api/hello', setMsg);
     }
   };
   </script>

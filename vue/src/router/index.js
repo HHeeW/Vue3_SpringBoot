@@ -3,6 +3,7 @@ import Home from '../components/HOME.vue'
 import HelloWorld from '../components/HelloWorld.vue'
 import NotFound from '../error/404.vue';
 import SpringConnect from '@/components/SpringConnect.vue';
+import Dashboard from '@/components/Dashboard/Dashboard.vue';
 
 const routes = [
   { path: '/', redirect: '/home'}, 
@@ -18,6 +19,10 @@ const routes = [
     path: '/helloSpring', 
     name: 'helloSpring', 
     component: SpringConnect },
+  { 
+    path: '/Dashboard', 
+    name: 'Dashboard', 
+    component: Dashboard },
 
 
   

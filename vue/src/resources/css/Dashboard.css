@@ -1,0 +1,24 @@
+
+#mainContainer{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.colContainer,
+.rowContainer {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.rowContainer{
+    flex-direction: column;
+}
+.brick {
+    border: 1px solid;
+    width: 100%;
+    min-height: 300px;
+}

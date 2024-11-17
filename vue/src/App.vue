@@ -9,9 +9,10 @@
       <RouterLink to="/home">HOME</RouterLink>
       <RouterLink to="/helloSpring">Spring</RouterLink>
       <RouterLink to="/HelloWorld">HelloWorld</RouterLink>
+      <RouterLink to="/Dashboard">게시판</RouterLink>
     </nav>
   </div>
-  <main>
+  <main style="overflow: auto; padding-bottom: 30px;">
     <RouterView/>
   </main>
 </template>
@@ -23,12 +24,15 @@ export default {
 </script>
 
 <style>
+body{margin:0;}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: grid;
+  grid-template-rows: 60px calc(100vh - 60px);
 }
 #VueContainer{
   display: grid;
